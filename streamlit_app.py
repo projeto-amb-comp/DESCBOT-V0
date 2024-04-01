@@ -2,10 +2,7 @@ from source.modules.chat_pdf import ChatPDFAPI
 import streamlit as st
 from dataclasses import dataclass
 
-@dataclass
-class MessageData:
-    user: str
-    texto: str
+
 # Page title
 st.set_page_config(page_title='ChatBot Uerj', page_icon='🤖')
 st.title('🤖 ChatBot Uerj')
@@ -21,27 +18,30 @@ with st.expander('Sobre essa aplicação'):
 st.subheader('Insira seu Documento e sua Key Para inicializar')
 user_key = st.text_input('Digite sua key:', key='chave')
 uploaded_file = st.file_uploader('Envie um documento PDF:', type=['pdf'])
-if uploaded_file is not None and len(user_key)>0:
-    file_contents = uploaded_file.read()
-    chat1 = ChatPDFAPI(api_key=user_key,file_content=file_contents)
 
 USER = "user"
 ASSISTANT = "assistant"
 MESSAGES = "messages"
 if (uploaded_file is not None) and (len(user_key)>0):
     if (MESSAGES not in st.session_state):
-        st.session_state[MESSAGES] = [MessageData(user=ASSISTANT, texto="Olá !!! O que deseja saber sobre esse Documento?")]
+        file_contents = uploaded_file.read()
+        chat1 = ChatPDFAPI(api_key=user_key,file_content=file_contents)
+        st.session_state['CHAT']=chat1
+        bemvindo="Olá !!! O que deseja saber sobre esse Documento?"
+        st.session_state[MESSAGES] =  [{'role': ASSISTANT,'content':bemvindo}]
 
-    msg: MessageData
     for msg in st.session_state[MESSAGES]:
-        st.chat_message(msg.user).write(msg.texto)
+        st.chat_message(msg.get('role')).write(msg.get('content'))
 
     prompt: str = st.chat_input("Escreva sua dúvida aqui:")
 
     if prompt and uploaded_file is not None and len(user_key)>0:
-        st.session_state[MESSAGES].append(MessageData(user=USER, texto=prompt))
+        st.session_state[MESSAGES].append({'role': USER,'content':prompt})
         st.chat_message(USER).write(prompt)
-        resposta = chat1.pergunta_pdf(prompt)
+        request=st.session_state[MESSAGES]
+        if len(st.session_state[MESSAGES])>6:
+            request= st.session_state[MESSAGES][-6:]
+        resposta = st.session_state['CHAT'].pergunta_pdf_with_context(request)
         response = f"{resposta}"
-        st.session_state[MESSAGES].append(MessageData(user=ASSISTANT, texto=response))
+        st.session_state[MESSAGES].append({'role': ASSISTANT,'content':resposta})
         st.chat_message(ASSISTANT).write(response) 

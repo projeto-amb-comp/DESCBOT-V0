@@ -76,3 +76,11 @@ class ChatPDFAPI:
                 }
         resposta = self.__request(url="/v1/chats/message",data=data)
         return resposta
+    
+    def pergunta_pdf_with_context(self,pergunta):
+        data=  {
+                    "sourceId": self.file_id,
+                    "messages": pergunta
+                }
+        resposta = self.__request(url="/v1/chats/message",data=data)
+        return resposta
