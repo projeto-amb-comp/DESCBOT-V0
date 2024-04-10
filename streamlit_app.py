@@ -11,7 +11,7 @@ with st.expander('Sobre essa aplicação'):
   st.info('Este projeto foi desenvolvido para facilitar a extração de informações e interações com documentos PDF por meio de uma interface de chat. Utilizando a biblioteca ChatPDF, é possível realizar operações como leitura de texto, busca por palavras-chave, marcação de trechos relevantes e muito mais, tudo de forma automatizada e intuitiva.')
 
   st.markdown('**Como usar a aplicação?**')
-  st.warning('Para iniciar, basta inserir sua Key do ChatPDF e o Documento que deseja extrair informações. Depois disso, é só perguntar para o chat')
+  st.warning('Para iniciar, basta inserir sua Key do framework ChatPDF e o Documento que deseja extrair informações. Depois disso, é só perguntar para o chat')
 
 
 st.subheader('Insira seu Documento e sua Key Para inicializar')
