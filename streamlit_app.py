@@ -2,10 +2,9 @@ from source.modules.chat_pdf import ChatPDFAPI
 import streamlit as st
 from dataclasses import dataclass
 
-
 # Page title
 st.set_page_config(page_title='ChatBot Uerj', page_icon='🤖')
-st.title('🤖 ChatBot Uerj')
+st.title('🤖 ChatBot UERJ')
 
 with st.expander('Sobre essa aplicação'):
   st.markdown('*O que essa aplicação pode fazer?*')
