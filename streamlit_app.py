@@ -5,6 +5,7 @@ from dataclasses import dataclass
 # Page title
 st.set_page_config(page_title='ChatBot UERJ', page_icon='🤖')
 st.title('🤖 ChatBot UERJ')
+st.sidebar.success("Selecione uma pagina")
 
 with st.expander('Sobre essa aplicação'):
   st.markdown('*O que essa aplicação pode fazer?*')
