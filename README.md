@@ -1,4 +1,4 @@
-# 📦 Projeto Ambiente Comoutacional V0
+# 📦 Projeto de Ambiente Computacional V0
 
 O ChatPDF é um projeto que permite a interação com documentos PDF por meio de um chatbot. 
 
