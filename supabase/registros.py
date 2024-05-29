@@ -29,7 +29,7 @@ class SupabaseClient:
         # Verifica se o email contém "@" e "."
         if "@" in email and "." in email and email.count("@") == 1:
             username, domain = email.split("@")
-            # Verifica se há pelo menos um caractere antes e depois do "@", e se termina com ".com" ou ".com.br"
+            # Verifica se há pelo menos um caractere antes e depois do "@"
             if len(username) > 0 and domain.count(".") >= 1:
                 # Verifica se há pelo menos uma letra após o "@" e antes do ponto "."
                 parts = domain.split(".")
