@@ -36,32 +36,30 @@ class SupabaseClient:
             if len(n.data) == 0:
                 return api_key
 
-    def insere_dados(self, nome, email, senha, api_key):
-        result = self.client.table("Registros").select("ID").eq("Email", email).execute()
-        if len(result.data) > 0:
-            print("Email já cadastrado")
+    def insere_dados(self, nome, email, senha, chat_pdf_api_key):
+        try:
+            result = self.client.table("Registros").select("ID").eq("Email", email).execute()
+            if len(result.data) > 0:
+                print("Email já cadastrado")
+                return False
+            
+            id = self.gera_id()
+           
+            data = {
+                "ID": id,
+                "Nome": nome,
+                "Email": email,
+                "Senha": senha,
+                "APIKey": chat_pdf_api_key
+            }
+            insert_response = self.client.table("Registros").insert(data).execute()
+            self.metricas_client.insere_id(id)
+            print("Registro inserido com sucesso.")
+            return True
+        except Exception as e:
+            print(f"Erro ao inserir os dados: {e}")
             return False
-        
-        # Gerar um novo ID único
-        id = self.gera_id()
-       
-        # Incluir a chave API do Chat PDF fornecida pelo usuário no registro
-        data = {
-            "ID": id,
-            "Nome": nome,
-            "Email": email,
-            "Senha": senha,
-            "APIKey": chat_pdf_api_key  # Certifique-se de que 'APIKey' é o nome correto da coluna
-        }
-        insert_response = self.client.table("Registros").insert(data).execute()
-    
-        # Verificar se houve erro na inserção e informar ao usuário
-        if insert_response.error:
-            print("Erro ao inserir os dados: ", insert_response.error.message)
-            if 'APIKey' in insert_response.error.message:
-                print("A chave API fornecida é inválida ou já está em uso.")
-            return False
-    
+
         # Inserir o ID na tabela Metricas
         self.metricas_client.insere_id(id)
     
@@ -189,6 +187,10 @@ supabase_client = SupabaseClient(st.secrets["SUPABASE_URL"], st.secrets["SUPABAS
 
 
 def login():
+    # Verifica se o usuário já está autenticado
+    if 'autenticado' in st.session_state and st.session_state['autenticado']:
+        return True
+    
     with st.form(key='user_form'):
         email = st.text_input("Digite seu email: ")
         senha = st.text_input("Digite sua senha: ", type="password")
@@ -199,11 +201,11 @@ def login():
             success, _ = supabase_client.autentica_dados(email, senha)
             if success:
                 st.success("Login bem-sucedido!")
+                st.session_state['autenticado'] = True  # Define a sessão como autenticada
                 return True
             else:
                 st.error("Email ou senha inválidos")
                 return False
-
     # Movendo a criação de novo usuário para fora do formulário de login
     with st.form(key='new_user_form'):
         create_user_button = st.form_submit_button('Criar novo usuário')
@@ -231,6 +233,8 @@ def login():
 st.set_page_config(page_title='ChatBot UERJ', page_icon='🤖')
 st.title('🤖 ChatBot UERJ')
 
+if 'autenticado' not in st.session_state:
+    st.session_state['autenticado'] = False  # Inicializa a sessão como não autenticada
 if login():
     with st.expander('Sobre essa aplicação'):
       st.markdown('*O que essa aplicação pode fazer?*')
