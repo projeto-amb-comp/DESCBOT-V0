@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def perguntas_page():
     try:
         perguntas = st.session_state['PERGUNTAS']
@@ -28,3 +29,8 @@ def perguntas_page():
                 perguntas_page()
     except Exception:
         print()
+
+if 'PERGUNTAS' not in  st.session_state:
+    st.write("Primeiro suba seu documento")
+else:
+    perguntas_page()
