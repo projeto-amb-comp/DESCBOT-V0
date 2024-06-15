@@ -76,19 +76,18 @@ if login():
 
 
         st.subheader('Insira seu Documento Para inicializar')
-        user_key = st.session_state['user_key']
-        uploaded_file = st.file_uploader('Envie um documento PDF:', type=['pdf'])
+        st.session_state['uploaded_file'] = st.file_uploader('Envie um documento PDF:', type=['pdf'])
 
 
-    if 'indice_pergunta' not in st.session_state or st.session_state['indice_pergunta']>10:
+    if 'indice_pergunta' not in st.session_state or st.session_state['indice_pergunta']>=10:
 
         USER = "user"
         ASSISTANT = "assistant"
         MESSAGES = "messages"
-        if (uploaded_file is not None) and (len(user_key)>0):
+        if (st.session_state['uploaded_file'] is not None) and (len(st.session_state['user_key'])>0):
             if (MESSAGES not in st.session_state):
-                file_contents = uploaded_file.read()
-                chat1 = ChatPDFAPI(api_key=user_key,file_content=file_contents)
+                file_contents = st.session_state['uploaded_file'].read()
+                chat1 = ChatPDFAPI(api_key=st.session_state['user_key'],file_content=file_contents)
                 st.session_state['CHAT']=chat1
                 bemvindo="Olá !!! O que deseja saber sobre esse Documento?"
                 st.session_state[MESSAGES] =  [{'role': ASSISTANT,'content':bemvindo}]
@@ -98,7 +97,7 @@ if login():
 
             prompt: str = st.chat_input("Escreva sua dúvida aqui:")
 
-            if prompt and uploaded_file is not None and len(user_key)>0:
+            if prompt and st.session_state['uploaded_file'] is not None and len(st.session_state['user_key'])>0:
                 st.session_state[MESSAGES].append({'role': USER,'content':prompt})
                 st.chat_message(USER).write(prompt)
                 request=st.session_state[MESSAGES]
