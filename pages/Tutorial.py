@@ -24,3 +24,10 @@ st.write(
 )
 st.link_button("Crie sua key agora mesmo", "https://www.chatpdf.com/")
 
+st.write(
+    '''
+    Em caso de duvidas consulte o nosso video tutorial de como obter a sua API key clicando no botão abaixo  
+    '''
+)
+st.link_button("Video tutorial", "https://www.youtube.com/watch?v=dZqjVjT1Ss4")
+
