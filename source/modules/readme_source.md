@@ -155,7 +155,9 @@ if sucesso:
 ## Métodos Principais
 __init__(self, url, api_key)
 Inicializa o objeto SupabaseClient com a URL e a chave de API do Supabase.
+
 **url:** A URL do seu projeto Supabase.
+
 **api_key:** A chave de API do seu projeto Supabase.
 gera_id(self)
 Gera um ID único que não está presente no banco de dados.
@@ -163,19 +165,13 @@ gera_api_key(self)
 Gera uma chave de API única que não está presente no banco de dados.
 insere_dados(self, nome, email, senha, chat_pdf_api_key)
 Insere um novo registro no banco de dados.
+
 **nome:** O nome do usuário.
-**email:** O email do usuário.
-**senha:** A senha do usuário.
+
 **chat_pdf_api_key:** A chave de API do Chat PDF.
-deleta_dados(self, email, senha)
-Deleta um registro do banco de dados baseado no email e na senha.
+
+**deleta_dados(self, email, senha)** Deleta um registro do banco de dados baseado no email e na senha.
+
 **email:** O email do usuário.
-**senha:** A senha do usuário.
-atualiza_dados(self, email, senha)
-Atualiza os dados de um registro no banco de dados.
-**email:** O email do usuário.
-**senha:** A senha do usuário.
-autentica_dados(self, email, senha)
-Autentica um usuário baseado no email e na senha.
-**email:** O email do usuário.
+
 **senha:** A senha do usuário.
