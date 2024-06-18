@@ -62,3 +62,34 @@ pergunta_pdf_with_context(self, pergunta)
 Envia uma pergunta para o PDF com contexto adicional e retorna a resposta.
 
 **pergunta:** A pergunta a ser feita ao PDF com contexto adicional.
+
+# BusinessError
+
+## Visão Geral
+`BusinessError` é uma exceção personalizada em Python usada para representar erros de negócio em uma aplicação. Esta classe pode ser utilizada para lançar exceções específicas relacionadas a regras de negócio ou lógica empresarial que não são cobertas pelas exceções padrão do Python.
+
+## Requisitos
+- Python 3.x
+
+## Instalação
+Como `BusinessError` é uma classe personalizada, ela pode ser incluída diretamente em seu projeto. Basta definir a classe em um arquivo Python dentro do seu projeto.
+
+## Utilização
+Aqui está um exemplo de como utilizar a classe `BusinessError` em seu código:
+
+1. **Definição da Classe `BusinessError`**:
+
+   ```python
+   class BusinessError(Exception):
+       """Exceção personalizada para erros de negócio."""
+
+       def __init__(self, message):
+           super().__init__(message)
+           self.message = message
+   
+## Métodos Principais
+
+## __init__(self, message)
+
+Inicializa a exceção BusinessError com uma mensagem específica.
+message: A mensagem de erro a ser associada à exceção.
