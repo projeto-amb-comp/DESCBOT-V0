@@ -90,3 +90,91 @@ Aqui está um exemplo de como utilizar a classe `BusinessError` em seu código:
 
 Inicializa a exceção BusinessError com uma mensagem específica.
 message: A mensagem de erro a ser associada à exceção.
+
+# SupabaseClient
+
+## Visão Geral
+`SupabaseClient` é uma classe Python desenvolvida para interagir com um banco de dados Supabase. Esta classe fornece métodos para gerar IDs e chaves de API exclusivas, inserir, deletar, atualizar e autenticar registros no banco de dados.
+
+## Requisitos
+- Biblioteca `supabase`
+- Biblioteca `supabase_metrics`
+
+## Instalação
+1. Clone este repositório para o seu ambiente local:
+
+2. Instale as bibliotecas necessárias usando os seguintes comandos:
+    ```
+    pip install supabase
+    pip install supabase_metrics
+    ```
+
+## Utilização
+Aqui está um exemplo de como utilizar a classe `SupabaseClient`:
+
+1. **Inicialização do Objeto `SupabaseClient`**:
+
+   ```python
+   from SupabaseClient import SupabaseClient
+
+   url = "SUA_URL_SUPABASE"
+   api_key = "SUA_API_KEY_SUPABASE"
+   client = SupabaseClient(url, api_key)
+
+## Exemplos de uso
+
+1. **Inserir Dados**:
+   
+nome = "João"
+email = "joao@example.com"
+senha = "senha123"
+chat_pdf_api_key = "API_KEY_CHAT_PDF"
+client.insere_dados(nome, email, senha, chat_pdf_api_key)
+
+2. **Deletar Dados**:
+
+email = "joao@example.com"
+senha = "senha123"
+client.deleta_dados(email, senha)
+
+3. **Atualizar Dados:**:
+email = "joao@example.com"
+senha = "senha123"
+client.atualiza_dados(email, senha)
+
+4. **Autenticar Dados:**:
+
+email = "joao@example.com"
+senha = "senha123"
+sucesso, api_key = client.autentica_dados(email, senha)
+if sucesso:
+    print("Acesso liberado")
+
+
+## Métodos Principais
+__init__(self, url, api_key)
+Inicializa o objeto SupabaseClient com a URL e a chave de API do Supabase.
+**url:** A URL do seu projeto Supabase.
+**api_key:** A chave de API do seu projeto Supabase.
+gera_id(self)
+Gera um ID único que não está presente no banco de dados.
+gera_api_key(self)
+Gera uma chave de API única que não está presente no banco de dados.
+insere_dados(self, nome, email, senha, chat_pdf_api_key)
+Insere um novo registro no banco de dados.
+**nome:** O nome do usuário.
+**email:** O email do usuário.
+**senha:** A senha do usuário.
+**chat_pdf_api_key:** A chave de API do Chat PDF.
+deleta_dados(self, email, senha)
+Deleta um registro do banco de dados baseado no email e na senha.
+**email:** O email do usuário.
+**senha:** A senha do usuário.
+atualiza_dados(self, email, senha)
+Atualiza os dados de um registro no banco de dados.
+**email:** O email do usuário.
+**senha:** A senha do usuário.
+autentica_dados(self, email, senha)
+Autentica um usuário baseado no email e na senha.
+**email:** O email do usuário.
+**senha:** A senha do usuário.
