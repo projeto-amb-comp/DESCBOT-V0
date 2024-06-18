@@ -68,9 +68,6 @@ Envia uma pergunta para o PDF com contexto adicional e retorna a resposta.
 ## Visão Geral
 `BusinessError` é uma exceção personalizada em Python usada para representar erros de negócio em uma aplicação. Esta classe pode ser utilizada para lançar exceções específicas relacionadas a regras de negócio ou lógica empresarial que não são cobertas pelas exceções padrão do Python.
 
-## Requisitos
-- Python 3.x
-
 ## Instalação
 Como `BusinessError` é uma classe personalizada, ela pode ser incluída diretamente em seu projeto. Basta definir a classe em um arquivo Python dentro do seu projeto.
 
