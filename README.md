@@ -17,6 +17,7 @@
 10. Melhorias
 11. FAQ (Perguntas Frequentes)
 12. Referências
+13. Equipe 
 
 
 
@@ -236,6 +237,16 @@ Em caso de bugs encontrados na aplicação, enviar email para projetodeambientec
 - [Documentação da API ChatPDF](https://www.chatpdf.com/docs/api/backend)
 - [Documentação do GitHub](https://docs.github.com/pt)
 
+## 13. Equipe
+Este projeto foi desenvolvido em conjunto para a disciplina de Projeto de Ambiente Computacional do curso de Engenharia Elétrica com ênfase em Sistemas e Computação da UERJ.
+Abaixo estão os responsáveis por cada parte do projeto e seus contatos.
+
+Giulia Campos
+Luis David
+[Monique Santana](https://github.com/monique-santana) - Documentação
+Pedro Amaral Rosa 
+Tiago Rodrigues 
+Vinicius - 
 
 
 
