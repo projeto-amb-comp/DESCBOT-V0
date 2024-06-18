@@ -13,9 +13,8 @@
 6. Banco de Dados
 7. Segurança
 8. Exemplos de uso
-9. Implantação
-10. Manutenção e Contribuição
-11. Melhorias
+9. Manutenção e Contribuição
+10. Melhorias
 11. FAQ (Perguntas Frequentes)
 12. Referências
 
@@ -176,9 +175,8 @@ O usuário não deve fazer upload de documentos sensíveis, pois o ChatPDF armaz
 ![Perguntas 1](https://github.com/projeto-amb-comp/DESCBOT-V0/assets/76968158/5b5c80bb-7521-4cbe-a707-4332cc7f61bf)
 ![Perguntas 2](https://github.com/projeto-amb-comp/DESCBOT-V0/assets/76968158/fcc5cd51-0446-4f93-8472-b8bbf9bdcd01)
 
-## 9. Implantação
 
-## 10. Manutenção e Contribuição
+## 9. Manutenção e Contribuição
 
 Este é um projeto de código aberto e está disponível para contribuições. 
 
@@ -218,12 +216,12 @@ git push origin sua-branch
 ### Reportar Problemas
 Em caso de bugs encontrados na aplicação, enviar email para projetodeambientecomputacional@gmail.com ou reportar na aba [issues](https://github.com/projeto-amb-comp/DESCBOT-V0/issues) na página do GitHub do projeto.
 
-## 11. Possíveis melhorias
+## 10. Possíveis melhorias
 - Migração da base de dados para servidor local.
 - Criptografia de dados sensíveis.
 - Implementar função de recuperação de senha.
 
-## 12. FAQ (Perguntas Frequentes)
+## 11. FAQ (Perguntas Frequentes)
 - ### Como faço para obter uma chave para a API ChatPDF?
     Acesse a página do [ChatPDF](https://www.chatpdf.com/), clique em 'My Account' ao final da página e faça login com uma conta Google.
     Um pop-up será aberto contendo o tópico 'Developers', neste tópico está a sua APIKey que deve ser copiada e colada na página da aplicação Chatbot UERJ.
@@ -232,7 +230,7 @@ Em caso de bugs encontrados na aplicação, enviar email para projetodeambientec
     Apenas arquivos em PDF são compatíveis com a aplicação. O arquivo deve ter no máximo 200MB.
 
 
-## 13. Referências
+## 12. Referências
 - [Documentação do Streamlit](https://docs.streamlit.io/)
 - [Documentação do Supabase](https://supabase.com/docs) 
 - [Documentação da API ChatPDF](https://www.chatpdf.com/docs/api/backend)
