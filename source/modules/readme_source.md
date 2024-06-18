@@ -137,7 +137,8 @@ email = "joao@example.com"
 senha = "senha123"
 client.deleta_dados(email, senha)
 
-3. **Atualizar Dados:**:
+3. **Atualizar Dados:**
+   
 email = "joao@example.com"
 senha = "senha123"
 client.atualiza_dados(email, senha)
