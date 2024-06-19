@@ -25,7 +25,7 @@
 
 Este projeto foi desenvolvido na disciplina de Projeto de Ambiente Computacional do curso de Engenharia Elétrica com ênfase em Sistemas e Computação da UERJ, e tem por objetivo tornar-se uma ferramenta útil para os estudantes do departamento. 
 
-A aplicação é um chatbot interativo que utiliza a API ChatPDF para fornecer respostas baseadas em documentos PDF. Foi desenolvida em Python e utiliza a biblioteca Streamlit para construir a interface de usuário. O banco de dados utilizado para armazenar as informações do usuário foi o Supabase e o código fonte está hospedado no GitHub.
+A aplicação é um chatbot interativo que utiliza a API ChatPDF para fornecer respostas baseadas em documentos PDF. Foi desenvolvida em Python e utiliza a biblioteca Streamlit para construir a interface de usuário. O banco de dados utilizado para armazenar as informações do usuário foi o Supabase e o código fonte está hospedado no GitHub.
 
 Para acessar o chatbot, [clique aqui](https://descbot-uerj.streamlit.app/).
 
@@ -92,7 +92,7 @@ Para ativar o ambiente, siga os comandos abaixo, dependendo do seu sistema opera
 source .venv/bin/activate
 ```
 
-Uma vez ativado, o nome do seu ambiente aparecerá no termninal. "(.venv)"
+Uma vez ativado, o nome do seu ambiente aparecerá no terminal. "(.venv)"
 
 
 ##### 2.4. Executando a aplicação do chatbot: 
@@ -136,7 +136,7 @@ A tabela de usuários armazena informações de cadastro de cada usuário regist
 - `nome`: Nome do usuário
 - `email`: Email do usuário
 - `senha`   : Senha do usuário
-- `APIKey`': API Key do chatPDF do usuário 
+- `API Key`': API Key do chatPDF do usuário 
 
 ### 6.2.1.1 Funções da tabela de usuários
 - `adicionar_registro(registro)` - Adiciona o registro de um novo usuário
@@ -160,8 +160,7 @@ A tabela de métricas tem como objetivo mensurar informações de acessos de usu
 
 
 ## 7. Segurança
-O acesso à plataforma por parte dos usuários é feito através de login e senha. 
-Para recuperação de senha, o usuário deve informar a chave APIKey.
+O acesso à plataforma por parte dos usuários é feito através de login e senha.
 Os dados sensíveis não são criptografados, portanto o usuário deve usar uma **senha única** para o serviço. 
 O usuário não deve fazer upload de documentos sensíveis, pois o ChatPDF armazena os dados carregados.
 
@@ -224,7 +223,7 @@ Em caso de bugs encontrados na aplicação, enviar email para projetodeambientec
 ## 11. FAQ (Perguntas Frequentes)
 - ### Como faço para obter uma chave para a API ChatPDF?
     Acesse a página do [ChatPDF](https://www.chatpdf.com/), clique em 'My Account' ao final da página e faça login com uma conta Google.
-    Um pop-up será aberto contendo o tópico 'Developers', neste tópico está a sua APIKey que deve ser copiada e colada na página da aplicação Chatbot UERJ.
+    Um pop-up será aberto contendo o tópico 'Developers', neste tópico está a sua API Key que deve ser copiada e colada na página da aplicação Chatbot UERJ.
 
 - ### Quais os tipos de arquivos compatíveis com a aplicação?
     Apenas arquivos em PDF são compatíveis com a aplicação. O arquivo deve ter no máximo 200MB.
