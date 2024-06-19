@@ -103,17 +103,16 @@ streamlit run streamlit_app.py
 
 
 ## 3. Arquitetura
-
+A arquitetura da aplicação é dividida em três componentes principais
 
 ### 3.1. Interface do usuário 
- - 
- - 
+ - Exibe a interface do chatbot.
+ - Coleta e exibe as respostas da API ChatPDF.
 ### 3.2. Backend
- - 
- - 
+ - API ChatPDF: Processa as consultas e retorna respostas baseadas nos PDFs.
+ - Supabase: armazena os dados do usuários e as métricas da aplicação.
 ### 3.3. Hospedagem
- - 
- - 
+ - O código fonte está hospedado no GitHub.
 
 
 ## 4. Funcionalidades
@@ -242,7 +241,7 @@ Este projeto foi desenvolvido em conjunto para a disciplina de Projeto de Ambien
 Abaixo estão os responsáveis por cada parte do projeto e seus contatos.
 
 - [Giulia Campos](https://github.com/GiuliaCampos16) - Documentação
-- [Luis David] - Back-end e Documentação
+- Luis David - Back-end e Documentação
 - [Monique Santana](https://github.com/monique-santana) - Documentação
 - [Pedro Amaral Rosa](https://github.com/amaralrosapedro) - Front-end e Sistema de login
 - Tiago Rodrigues - Back-end e Front-end
