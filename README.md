@@ -241,12 +241,12 @@ Em caso de bugs encontrados na aplicação, enviar email para projetodeambientec
 Este projeto foi desenvolvido em conjunto para a disciplina de Projeto de Ambiente Computacional do curso de Engenharia Elétrica com ênfase em Sistemas e Computação da UERJ.
 Abaixo estão os responsáveis por cada parte do projeto e seus contatos.
 
-Giulia Campos
-Luis David
-[Monique Santana](https://github.com/monique-santana) - Documentação
-Pedro Amaral Rosa 
-Tiago Rodrigues 
-Vinicius - 
+- [Giulia Campos](https://github.com/GiuliaCampos16) - Documentação
+- [Luis David] - Back-end e Documentação
+- [Monique Santana](https://github.com/monique-santana) - Documentação
+- [Pedro Amaral Rosa](https://github.com/amaralrosapedro) - Front-end e Sistema de login
+- Tiago Rodrigues - Back-end e Front-end
+- Vinicius Salazar- Back-end
 
 
 
